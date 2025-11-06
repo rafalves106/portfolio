@@ -11,6 +11,8 @@ import { DataBases } from "./pages/SkillsPage/Sections/DataBases";
 import { Deploy } from "./pages/SkillsPage/Sections/Deploy";
 import { GraphicDesign } from "./pages/SkillsPage/Sections/GraphicDesign";
 import { WebDesign } from "./pages/SkillsPage/Sections/WebDesign";
+import FrontEndPage from "./pages/FrontEndPage";
+import BackEndPage from "./pages/BackEndPage";
 
 function App() {
   const [abaAtiva, setAbaAtiva] = React.useState<string>("menu");
@@ -34,6 +36,8 @@ function App() {
         <AboutPage abaAtiva={abaAtiva} handleMudarAba={handleMudarAba} />
         <CertificatesPage abaAtiva={abaAtiva} handleMudarAba={handleMudarAba} />
         <TechsPage abaAtiva={abaAtiva} handleMudarAba={handleMudarAba} />
+        <FrontEndPage abaAtiva={abaAtiva} handleMudarAba={handleMudarAba} />
+        <BackEndPage abaAtiva={abaAtiva} handleMudarAba={handleMudarAba} />
         <SkillsPage
           abaAtiva={abaAtiva}
           handleMudarAba={handleMudarAba}

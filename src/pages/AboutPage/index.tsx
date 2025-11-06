@@ -8,7 +8,13 @@ import { StyledContainer, Icon, PageHeader } from "../../components/Ui/styles";
 
 import aboutMeIcon from "../../assets/icons/about_me.png";
 import aboutMeImage from "../../assets/images/about_me/about_me_image.png";
-import { AboutImageAndTextContainer, AboutTextContainer } from "./styles";
+import bestFriendPic from "../../assets/images/about_me/bestFriend.webp";
+
+import {
+  AboutImageAndTextContainer,
+  AboutTextContainer,
+  BestFriendImage,
+} from "./styles";
 import Container from "../../components/Ui";
 
 type Props = {
@@ -65,6 +71,11 @@ const AboutPage = (props: Props) => {
             </SecondaryText>
           </AboutTextContainer>
         </div>
+        <BestFriendImage
+          className="bottom-right-image"
+          src={bestFriendPic}
+          alt="about me"
+        />
       </Container>
     </StyledContainer>
   );

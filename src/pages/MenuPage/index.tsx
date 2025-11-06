@@ -92,9 +92,7 @@ const MenuPage = (props: Props) => {
 
         <StyledContainer
           className="glass-effect small"
-          onClick={() =>
-            props.handleMudarAba && props.handleMudarAba("linkedin")
-          }
+          onClick={() => window.open("https://www.linkedin.com/in/falves-dev/")}
         >
           <Icon className="big" src={linkedin} alt="My LinkedIn" />
           <ItemPrimaryTitle>My LinkedIn</ItemPrimaryTitle>
@@ -103,7 +101,7 @@ const MenuPage = (props: Props) => {
 
         <StyledContainer
           className="glass-effect small"
-          onClick={() => props.handleMudarAba && props.handleMudarAba("github")}
+          onClick={() => window.open("https://github.com/rafalves106")}
         >
           <Icon className="big" src={github} alt="My GitHub" />
           <ItemPrimaryTitle>My GitHub</ItemPrimaryTitle>

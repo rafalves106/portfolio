@@ -50,6 +50,18 @@ export const OrangeElipse = styled.div`
     height: 540px;
     transform: translate(10vw, -35vh);
   }
+
+  &.frontend {
+    width: 220px;
+    height: 220px;
+    transform: translate(85vw, 50vh);
+  }
+
+  &.backend {
+    width: 380px;
+    height: 380px;
+    transform: translate(30vw, 78vh);
+  }
 `;
 
 export const BlueElipse = styled.div`
@@ -92,6 +104,18 @@ export const BlueElipse = styled.div`
     height: 380px;
     transform: translate(calc(90vw - 380px), calc(100vh - 380px));
   }
+
+  &.frontend {
+    width: 540px;
+    height: 540px;
+    transform: translate(-10vw, 40vh);
+  }
+
+  &.backend {
+    width: 220px;
+    height: 220px;
+    transform: translate(40vw, -20vh);
+  }
 `;
 
 export const GreenElipse = styled.div`
@@ -133,6 +157,18 @@ export const GreenElipse = styled.div`
     width: 220px;
     height: 220px;
     transform: translate(20vw, calc(98vh - 220px));
+  }
+
+  &.frontend {
+    width: 380px;
+    height: 380px;
+    transform: translate(70vw, -30vh);
+  }
+
+  &.backend {
+    width: 540px;
+    height: 540px;
+    transform: translate(-15vw, 40vh);
   }
 `;
 

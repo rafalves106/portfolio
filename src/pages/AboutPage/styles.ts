@@ -33,3 +33,21 @@ export const AboutTextContainer = styled.div`
     }
   }
 `;
+
+export const BestFriendImage = styled.img`
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+`;
