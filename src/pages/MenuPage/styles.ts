@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { PageContent } from "../../components/ui/styles";
+import { PageContent } from "../../components/Ui/styles";
 
 export const MenuPageContent = styled(PageContent)`
   display: flex;

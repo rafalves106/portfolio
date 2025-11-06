@@ -1,4 +1,3 @@
-import GlassContainer from "../../components/GlassContainer";
 import {
   ItemPrimaryTitle,
   ItemSecondaryTitle,
@@ -15,7 +14,7 @@ import frontend from "../../assets/icons/frontend.png";
 import backend from "../../assets/icons/backend.png";
 import linkedin from "../../assets/icons/linkedin.png";
 import github from "../../assets/icons/github.png";
-import { Icon, Container, PageHeader } from "../../components/ui/styles";
+import { Icon, PageHeader, StyledContainer } from "../../components/Ui/styles";
 
 type Props = {
   abaAtiva: string;
@@ -24,24 +23,24 @@ type Props = {
 
 const MenuPage = (props: Props) => {
   return (
-    <Container className={props.abaAtiva !== "menu" ? "hidden" : ""}>
+    <StyledContainer className={props.abaAtiva !== "menu" ? "hidden" : ""}>
       <PageHeader>
         <PagePrimaryTitle>Hi, Welcome!</PagePrimaryTitle>
         <PageSecondaryTitle>Click on icons to know more</PageSecondaryTitle>
       </PageHeader>
 
       <MenuPageContent>
-        <GlassContainer
-          containerSize="small"
+        <StyledContainer
+          className="glass-effect small"
           onClick={() => props.handleMudarAba("about_me")}
         >
           <Icon className="big" src={aboutMe} alt="About Me" />
           <ItemPrimaryTitle>About Me</ItemPrimaryTitle>
           <ItemSecondaryTitle>Sobre Mim</ItemSecondaryTitle>
-        </GlassContainer>
+        </StyledContainer>
 
-        <GlassContainer
-          containerSize="small"
+        <StyledContainer
+          className="glass-effect small"
           onClick={() =>
             props.handleMudarAba && props.handleMudarAba("certificates")
           }
@@ -49,30 +48,28 @@ const MenuPage = (props: Props) => {
           <Icon className="big" src={certificates} alt="Certificates" />
           <ItemPrimaryTitle>Certificates</ItemPrimaryTitle>
           <ItemSecondaryTitle>Certificados</ItemSecondaryTitle>
-        </GlassContainer>
+        </StyledContainer>
 
-        <GlassContainer
-          containerSize="small"
+        <StyledContainer
+          className="glass-effect small"
           onClick={() => props.handleMudarAba && props.handleMudarAba("techs")}
         >
           <Icon className="big" src={techs} alt="Techs" />
           <ItemPrimaryTitle>Techs</ItemPrimaryTitle>
           <ItemSecondaryTitle>Tecnologias</ItemSecondaryTitle>
-        </GlassContainer>
+        </StyledContainer>
 
-        <GlassContainer
-          containerSize="small"
-          onClick={() =>
-            props.handleMudarAba && props.handleMudarAba("tech_skills")
-          }
+        <StyledContainer
+          className="glass-effect small"
+          onClick={() => props.handleMudarAba && props.handleMudarAba("skills")}
         >
           <Icon className="big" src={tech_skills} alt="Tech Skills" />
           <ItemPrimaryTitle>Tech Skills</ItemPrimaryTitle>
           <ItemSecondaryTitle>Habilidades</ItemSecondaryTitle>
-        </GlassContainer>
+        </StyledContainer>
 
-        <GlassContainer
-          containerSize="small"
+        <StyledContainer
+          className="glass-effect small"
           onClick={() =>
             props.handleMudarAba && props.handleMudarAba("frontend")
           }
@@ -80,10 +77,10 @@ const MenuPage = (props: Props) => {
           <Icon className="big" src={frontend} alt="Frontend Projects" />
           <ItemPrimaryTitle>Frontend Projects</ItemPrimaryTitle>
           <ItemSecondaryTitle>Projetos Frontend</ItemSecondaryTitle>
-        </GlassContainer>
+        </StyledContainer>
 
-        <GlassContainer
-          containerSize="small"
+        <StyledContainer
+          className="glass-effect small"
           onClick={() =>
             props.handleMudarAba && props.handleMudarAba("backend")
           }
@@ -91,10 +88,10 @@ const MenuPage = (props: Props) => {
           <Icon className="big" src={backend} alt="Backend Projects" />
           <ItemPrimaryTitle>Backend Projects</ItemPrimaryTitle>
           <ItemSecondaryTitle>Projetos Backend</ItemSecondaryTitle>
-        </GlassContainer>
+        </StyledContainer>
 
-        <GlassContainer
-          containerSize="small"
+        <StyledContainer
+          className="glass-effect small"
           onClick={() =>
             props.handleMudarAba && props.handleMudarAba("linkedin")
           }
@@ -102,18 +99,18 @@ const MenuPage = (props: Props) => {
           <Icon className="big" src={linkedin} alt="My LinkedIn" />
           <ItemPrimaryTitle>My LinkedIn</ItemPrimaryTitle>
           <ItemSecondaryTitle>Meu LinkedIn</ItemSecondaryTitle>
-        </GlassContainer>
+        </StyledContainer>
 
-        <GlassContainer
-          containerSize="small"
+        <StyledContainer
+          className="glass-effect small"
           onClick={() => props.handleMudarAba && props.handleMudarAba("github")}
         >
           <Icon className="big" src={github} alt="My GitHub" />
           <ItemPrimaryTitle>My GitHub</ItemPrimaryTitle>
           <ItemSecondaryTitle>Meu GitHub</ItemSecondaryTitle>
-        </GlassContainer>
+        </StyledContainer>
       </MenuPageContent>
-    </Container>
+    </StyledContainer>
   );
 };
 

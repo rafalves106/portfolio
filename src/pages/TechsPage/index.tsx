@@ -1,10 +1,9 @@
-import GlassContainer from "../../components/GlassContainer";
 import {
   ItemPrimaryTitle,
   PagePrimaryTitle,
   PageSecondaryTitle,
 } from "../../components/Texts/styles";
-import { Container, Icon, PageHeader } from "../../components/ui/styles";
+import { StyledContainer, Icon, PageHeader } from "../../components/Ui/styles";
 
 import iconTechs from "../../assets/icons/techs.png";
 
@@ -26,7 +25,8 @@ import githubLogo from "../../assets/logos/github.png";
 import vercelLogo from "../../assets/logos/vercel.png";
 import renderLogo from "../../assets/logos/render.png";
 
-import { LogosContainer, TechsContainer } from "./styles";
+import { LogosContainer } from "./styles";
+import Container from "../../components/Ui";
 
 type Props = {
   abaAtiva: string;
@@ -35,80 +35,84 @@ type Props = {
 
 const TechsPage = (props: Props) => {
   return (
-    <Container className={props.abaAtiva !== "techs" ? "hidden" : ""}>
+    <StyledContainer className={props.abaAtiva !== "techs" ? "hidden" : ""}>
       <PageHeader>
         <PagePrimaryTitle>Techs</PagePrimaryTitle>
         <PageSecondaryTitle>Tecnologias</PageSecondaryTitle>
       </PageHeader>
 
-      <TechsContainer>
+      <Container
+        containerType="border"
+        containerSize="big"
+        handleMudarAba={props.handleMudarAba}
+      >
         <Icon className="small" src={iconTechs} alt="Techs" />
         <LogosContainer>
-          <GlassContainer containerSize="logo">
+          <StyledContainer className="glass-effect logo">
             <img src={reactLogo} alt="React Logo" />
             <ItemPrimaryTitle>React</ItemPrimaryTitle>
-          </GlassContainer>
-          <GlassContainer containerSize="logo">
+          </StyledContainer>
+          <StyledContainer className="glass-effect logo">
             <img src={typescriptLogo} alt="TypeScript Logo" />
             <ItemPrimaryTitle>TypeScript</ItemPrimaryTitle>
-          </GlassContainer>
-          <GlassContainer containerSize="logo">
+          </StyledContainer>
+          <StyledContainer className="glass-effect logo">
             <img src={viteLogo} alt="Vite Logo" />
             <ItemPrimaryTitle>Vite</ItemPrimaryTitle>
-          </GlassContainer>
-          <GlassContainer containerSize="logo">
+          </StyledContainer>
+          <StyledContainer className="glass-effect logo">
             <img src={htmlLogo} alt="HTML Logo" />
             <ItemPrimaryTitle>HTML</ItemPrimaryTitle>
-          </GlassContainer>
-          <GlassContainer containerSize="logo">
+          </StyledContainer>
+          <StyledContainer className="glass-effect logo">
             <img src={cssLogo} alt="CSS Logo" />
             <ItemPrimaryTitle>CSS</ItemPrimaryTitle>
-          </GlassContainer>
+          </StyledContainer>
 
-          <GlassContainer containerSize="logo">
+          <StyledContainer className="glass-effect logo">
             <img src={javaLogo} alt="Java Logo" />
             <ItemPrimaryTitle>Java</ItemPrimaryTitle>
-          </GlassContainer>
-          <GlassContainer containerSize="logo">
+          </StyledContainer>
+          <StyledContainer className="glass-effect logo">
             <img src={springbootLogo} alt="Spring Boot Logo" />
             <ItemPrimaryTitle>Spring Boot</ItemPrimaryTitle>
-          </GlassContainer>
-          <GlassContainer containerSize="logo">
+          </StyledContainer>
+          <StyledContainer className="glass-effect logo">
             <img src={pythonLogo} alt="Python Logo" />
             <ItemPrimaryTitle>Python</ItemPrimaryTitle>
-          </GlassContainer>
-          <GlassContainer containerSize="logo">
+          </StyledContainer>
+          <StyledContainer className="glass-effect logo">
             <img src={postgresqlLogo} alt="PostgreSQL Logo" />
             <ItemPrimaryTitle>PostgreSQL</ItemPrimaryTitle>
-          </GlassContainer>
-          <GlassContainer containerSize="logo">
+          </StyledContainer>
+          <StyledContainer className="glass-effect logo">
             <img src={mongodbLogo} alt="MongoDB Logo" />
             <ItemPrimaryTitle>MongoDB</ItemPrimaryTitle>
-          </GlassContainer>
+          </StyledContainer>
 
-          <GlassContainer containerSize="logo">
+          <StyledContainer className="glass-effect logo">
             <img src={mysqlLogo} alt="MySQL Logo" />
             <ItemPrimaryTitle>MySQL</ItemPrimaryTitle>
-          </GlassContainer>
-          <GlassContainer containerSize="logo">
+          </StyledContainer>
+          <StyledContainer className="glass-effect logo">
             <img src={gitLogo} alt="Git Logo" />
             <ItemPrimaryTitle>Git</ItemPrimaryTitle>
-          </GlassContainer>
-          <GlassContainer containerSize="logo">
+          </StyledContainer>
+          <StyledContainer className="glass-effect logo">
             <img src={githubLogo} alt="GitHub Logo" />
             <ItemPrimaryTitle>GitHub</ItemPrimaryTitle>
-          </GlassContainer>
-          <GlassContainer containerSize="logo">
+          </StyledContainer>
+          <StyledContainer className="glass-effect logo">
             <img src={vercelLogo} alt="Vercel Logo" />
             <ItemPrimaryTitle>Vercel</ItemPrimaryTitle>
-          </GlassContainer>
-          <GlassContainer containerSize="logo">
+          </StyledContainer>
+          <StyledContainer className="glass-effect logo">
             <img src={renderLogo} alt="Render Logo" />
             <ItemPrimaryTitle>Render</ItemPrimaryTitle>
-          </GlassContainer>
+          </StyledContainer>
         </LogosContainer>
-      </TechsContainer>
-    </Container>
+      </Container>
+    </StyledContainer>
   );
 };
 

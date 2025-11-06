@@ -34,13 +34,8 @@ export const PrimaryText = styled.p`
 `;
 
 export const SecondaryText = styled.p`
-  font-size: 12px;
-  font-weight: lighter;
-  color: var(--color-text);
-`;
-
-export const TertiaryText = styled.p`
   font-size: 14px;
+  line-height: 160%;
   font-weight: lighter;
   color: var(--color-text);
 `;

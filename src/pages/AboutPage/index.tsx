@@ -1,15 +1,15 @@
-import GlassContainer from "../../components/GlassContainer";
 import {
   PagePrimaryTitle,
   PageSecondaryTitle,
   PrimaryText,
-  TertiaryText,
+  SecondaryText,
 } from "../../components/Texts/styles";
-import { Container, Icon, PageHeader } from "../../components/ui/styles";
+import { StyledContainer, Icon, PageHeader } from "../../components/Ui/styles";
 
 import aboutMeIcon from "../../assets/icons/about_me.png";
 import aboutMeImage from "../../assets/images/about_me/about_me_image.png";
 import { AboutImageAndTextContainer, AboutTextContainer } from "./styles";
+import Container from "../../components/Ui";
 
 type Props = {
   abaAtiva: string;
@@ -18,19 +18,19 @@ type Props = {
 
 const AboutPage = (props: Props) => {
   return (
-    <Container className={props.abaAtiva !== "about_me" ? "hidden" : ""}>
+    <StyledContainer className={props.abaAtiva !== "about_me" ? "hidden" : ""}>
       <PageHeader>
         <PagePrimaryTitle>About Me</PagePrimaryTitle>
         <PageSecondaryTitle>Know more about myself</PageSecondaryTitle>
       </PageHeader>
 
-      <GlassContainer containerSize="big">
+      <Container handleMudarAba={props.handleMudarAba} containerSize="big">
         <div style={{ padding: "66px" }}>
           <Icon className="small" src={aboutMeIcon} alt="About Me" />
           <AboutImageAndTextContainer>
-            <GlassContainer containerSize="image">
+            <StyledContainer className="glass-effect image">
               <img src={aboutMeImage} alt="about me" />
-            </GlassContainer>
+            </StyledContainer>
             <PrimaryText>
               <span>R</span>afael, but you can call me Falves. I'm 22 years old
               and was born in Governador Valadares, building my life and career
@@ -59,14 +59,14 @@ const AboutPage = (props: Props) => {
               it's the best way to improve my technical and interpersonal
               skills.
             </PrimaryText>
-            <TertiaryText>
+            <SecondaryText>
               <b>P.S.: </b>You can find a photo of my best friend, Teko, in the
               bottom-right corner of the page.
-            </TertiaryText>
+            </SecondaryText>
           </AboutTextContainer>
         </div>
-      </GlassContainer>
-    </Container>
+      </Container>
+    </StyledContainer>
   );
 };
 

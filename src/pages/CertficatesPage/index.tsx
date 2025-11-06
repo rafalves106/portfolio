@@ -2,7 +2,7 @@ import {
   PagePrimaryTitle,
   PageSecondaryTitle,
 } from "../../components/Texts/styles";
-import { Container, Icon, PageHeader } from "../../components/ui/styles";
+import { StyledContainer, Icon, PageHeader } from "../../components/Ui/styles";
 
 import certificatesIcon from "../../assets/icons/certificates.png";
 
@@ -11,10 +11,10 @@ import ebac_certificate_2 from "../../assets/images/certificates/ebac_2.webp";
 import curso_em_video_1 from "../../assets/images/certificates/curso_em_video_1.webp";
 import {
   CertificatesImagesContainer,
-  CertificatesGlassContainer,
   CertificatesImages,
   CertificatesContent,
 } from "./styles";
+import Container from "../../components/Ui";
 
 type Props = {
   abaAtiva: string;
@@ -23,13 +23,15 @@ type Props = {
 
 const CertificatesPage = (props: Props) => {
   return (
-    <Container className={props.abaAtiva !== "certificates" ? "hidden" : ""}>
+    <StyledContainer
+      className={props.abaAtiva !== "certificates" ? "hidden" : ""}
+    >
       <PageHeader>
         <PagePrimaryTitle>Certificates</PagePrimaryTitle>
         <PageSecondaryTitle>Certificados</PageSecondaryTitle>
       </PageHeader>
 
-      <CertificatesGlassContainer containerSize="big">
+      <Container handleMudarAba={props.handleMudarAba} containerSize="big">
         <CertificatesContent>
           <Icon className="small" src={certificatesIcon} alt="Certificates" />
           <CertificatesImagesContainer>
@@ -44,8 +46,8 @@ const CertificatesPage = (props: Props) => {
             <CertificatesImages src={curso_em_video_1} alt="Curso em Vídeo 1" />
           </CertificatesImagesContainer>
         </CertificatesContent>
-      </CertificatesGlassContainer>
-    </Container>
+      </Container>
+    </StyledContainer>
   );
 };
 
