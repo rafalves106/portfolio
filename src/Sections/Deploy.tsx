@@ -1,7 +1,7 @@
-import { SkillSection } from "../SkillSection";
-import vercelLogo from "../../../assets/logos/vercel.png";
-import renderLogo from "../../../assets/logos/render.png";
-import neonLogo from "../../../assets/logos/neon.png";
+import { SkillSection } from "../components/Skills/SkillSection";
+import vercelLogo from "../assets/logos/vercel.png";
+import renderLogo from "../assets/logos/render.png";
+import neonLogo from "../assets/logos/neon.png";
 
 type Props = {
   secaoAtiva: string;

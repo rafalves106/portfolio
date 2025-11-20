@@ -1,7 +1,7 @@
-import { SkillSection } from "../SkillSection";
-import postgresLogo from "../../../assets/logos/postgresql.png";
-import mysqlLogo from "../../../assets/logos/mysql.png";
-import mongoLogo from "../../../assets/logos/mongo.png";
+import { SkillSection } from "../components/Skills/SkillSection";
+import postgresLogo from "../assets/logos/postgresql.png";
+import mysqlLogo from "../assets/logos/mysql.png";
+import mongoLogo from "../assets/logos/mongo.png";
 
 type Props = {
   secaoAtiva: string;

@@ -1,35 +1,5 @@
 import styled from "styled-components";
 
-import folderIcon from "../../assets/icons/folder.png";
-
-export const SkillsContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 5vh 15vw;
-`;
-
-export const FolderContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  width: 200px;
-  height: 200px;
-  padding-top: 48px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateY(-10px);
-  }
-
-  background-image: url(${folderIcon});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-`;
-
 export const SkillsListContainer = styled.div`
   display: flex;
   flex-wrap: wrap;

@@ -1,7 +1,7 @@
-import { SkillSection } from "../SkillSection";
-import javaLogo from "../../../assets/logos/java.png";
-import springLogo from "../../../assets/logos/springboot.png";
-import pythonLogo from "../../../assets/logos/python.png";
+import { SkillSection } from "../components/Skills/SkillSection";
+import javaLogo from "../assets/logos/java.png";
+import springLogo from "../assets/logos/springboot.png";
+import pythonLogo from "../assets/logos/python.png";
 
 type Props = {
   secaoAtiva: string;

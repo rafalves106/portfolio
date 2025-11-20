@@ -1,9 +1,9 @@
-import { SkillSection } from "../SkillSection";
-import reactLogo from "../../../assets/logos/react.png";
-import typescriptLogo from "../../../assets/logos/typescript.png";
-import cssLogo from "../../../assets/logos/css.png";
-import javascriptLogo from "../../../assets/logos/javascript.png";
-import htmlLogo from "../../../assets/logos/html.png";
+import { SkillSection } from "../components/Skills/SkillSection";
+import reactLogo from "../assets/logos/react.png";
+import typescriptLogo from "../assets/logos/typescript.png";
+import cssLogo from "../assets/logos/css.png";
+import javascriptLogo from "../assets/logos/javascript.png";
+import htmlLogo from "../assets/logos/html.png";
 
 type Props = {
   secaoAtiva: string;

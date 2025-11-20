@@ -1,11 +1,4 @@
-import {
-  PagePrimaryTitle,
-  PageSecondaryTitle,
-  SecondaryText,
-  ItemPrimaryTitle,
-} from "../../components/Texts/styles";
-import { Icon, PageHeader, StyledContainer } from "../../components/Ui/styles";
-import Container from "../../components/Ui";
+import { SecondaryText, ItemPrimaryTitle } from "../Texts/styles";
 
 import { Github01Icon, StarIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -18,8 +11,7 @@ import {
   SkillTech,
   SkillTechContent,
 } from "./styles";
-
-import iconFolder from "../../assets/icons/folder.png";
+import { SkillsSection } from "../../pages/LandingPage/styles";
 
 interface SkillItem {
   title: string;
@@ -116,21 +108,8 @@ export function SkillSection(props: Props) {
   };
 
   return (
-    <StyledContainer className={visibilityClass}>
-      <PageHeader>
-        <PagePrimaryTitle>{props.sectionTitle}</PagePrimaryTitle>
-        <PageSecondaryTitle>Where I am specialized</PageSecondaryTitle>
-      </PageHeader>
-
-      <Container
-        handleMudarAba={props.handleMudarSecao}
-        containerSize="big"
-        containerType="glass-effect"
-      >
-        <Icon className="small" src={iconFolder} alt="Tech Skills" />
-
-        {renderizaSkills()}
-      </Container>
-    </StyledContainer>
+    <div className={visibilityClass}>
+      <SkillsSection> {renderizaSkills()}</SkillsSection>
+    </div>
   );
 }

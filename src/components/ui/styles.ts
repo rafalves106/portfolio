@@ -3,7 +3,7 @@ import { ItemPrimaryTitle, PagePrimaryTitle } from "../Texts/styles";
 
 export const Icon = styled.img`
   &.big {
-    width: 200px;
+    width: 12rem;
     height: auto;
     cursor: pointer;
   }
@@ -47,8 +47,10 @@ export const StyledContainer = styled.div`
   // Estilos de tamanho
 
   &.small {
-    width: 280px;
-    height: 280px;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 3rem;
+    gap: 0.5rem;
 
     display: flex;
     flex-direction: column;
@@ -107,27 +109,24 @@ export const StyledContainer = styled.div`
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    border-radius: 56px;
   }
 
   &.border {
     gap: 76px;
     border: 1px solid var(--color-border);
-    border-radius: 56px;
     padding: 51px 51px;
   }
 
   &.logo {
     overflow: hidden;
-    width: 180px;
-    height: 180px;
-    padding: 32px;
+    width: 12rem;
+    height: 12rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    border-radius: 16px;
+    border-radius: 3rem;
 
     img {
       height: 100px;
@@ -159,7 +158,7 @@ export const PageHeader = styled.div`
   margin-bottom: 2vh;
 `;
 
-export const PageContent = styled.div`
+export const SectionContent = styled.div`
   padding: 51px 51px;
   border-radius: 56px;
 `;

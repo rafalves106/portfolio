@@ -1,7 +1,7 @@
-import { SkillSection } from "../SkillSection";
-import corelLogo from "../../../assets/logos/coreldraw.png";
-import photoshopLogo from "../../../assets/logos/photoshop.png";
-import illustratorLogo from "../../../assets/logos/illustrator.png";
+import { SkillSection } from "../components/Skills/SkillSection";
+import corelLogo from "../assets/logos/coreldraw.png";
+import photoshopLogo from "../assets/logos/photoshop.png";
+import illustratorLogo from "../assets/logos/illustrator.png";
 
 type Props = {
   secaoAtiva: string;

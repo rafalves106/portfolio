@@ -1,7 +1,7 @@
-import { SkillSection } from "../SkillSection";
-import wordpressLogo from "../../../assets/logos/wordpress.png";
-import elementorLogo from "../../../assets/logos/elementor.png";
-import canvaLogo from "../../../assets/logos/canva.png";
+import { SkillSection } from "../components/Skills/SkillSection";
+import wordpressLogo from "../assets/logos/wordpress.png";
+import elementorLogo from "../assets/logos/elementor.png";
+import canvaLogo from "../assets/logos/canva.png";
 
 type Props = {
   secaoAtiva: string;
