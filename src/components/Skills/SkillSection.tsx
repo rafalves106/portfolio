@@ -76,7 +76,6 @@ export function SkillSection(props: Props) {
 
                   {skill.repos && skill.repos.length > 0 && (
                     <SkillRepositories>
-                      <span>Top Repositories:</span>
                       {skill.repos?.slice(0, 3).map((repo, i) => (
                         <a
                           key={i}

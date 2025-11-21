@@ -27,6 +27,7 @@ import {
   FoldersContainer,
   FolderTitle,
   Icon,
+  LanguageSwitchButton,
   LogosContainer,
   MenuSection,
   ProjectsGrid,
@@ -98,8 +99,11 @@ import mongoLogo from "../assets/logos/mongo.png";
 import springLogo from "../assets/logos/springboot.png";
 import umlLogo from "../assets/logos/uml.png";
 import diagram from "../assets/logos/diagram.png";
+import { LanguageProvider, useLanguage } from "../context/LanguageContext";
 
-const LandingPage = () => {
+// 1. RENOMEAMOS O COMPONENTE PRINCIPAL PARA "CONTENT"
+const LandingPageContent = () => {
+  const { t, language, toggleLanguage } = useLanguage();
   const [sectionActive, setSectionActive] = React.useState<string>("frontend");
 
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -122,10 +126,15 @@ const LandingPage = () => {
 
   return (
     <Container>
+      <LanguageSwitchButton onClick={toggleLanguage}>
+        <span>{language === "en" ? "🇺🇸" : "🇧🇷"}</span>
+        {language === "en" ? "EN" : "PT"}
+      </LanguageSwitchButton>
+
       <SectionContainer>
         <SectionHeader>
-          <PagePrimaryTitle>Hi, Welcome!</PagePrimaryTitle>
-          <PageSecondaryTitle>Click on icons to know more</PageSecondaryTitle>
+          <PagePrimaryTitle>{t.welcome}</PagePrimaryTitle>
+          <PageSecondaryTitle>{t.clickIcons}</PageSecondaryTitle>
         </SectionHeader>
 
         <MenuSection>
@@ -134,7 +143,7 @@ const LandingPage = () => {
             onClick={() => scrollToSection(aboutRef)}
           >
             <Icon className="big" src={aboutMe} alt="About Me" />
-            <ItemPrimaryTitle>About Me</ItemPrimaryTitle>
+            <ItemPrimaryTitle>{t.menuAbout}</ItemPrimaryTitle>
           </StyledContainer>
 
           <StyledContainer
@@ -142,7 +151,7 @@ const LandingPage = () => {
             onClick={() => scrollToSection(certificatesRef)}
           >
             <Icon className="big" src={certificates} alt="Certificates" />
-            <ItemPrimaryTitle>Certificates</ItemPrimaryTitle>
+            <ItemPrimaryTitle>{t.menuCertificates}</ItemPrimaryTitle>
           </StyledContainer>
 
           <StyledContainer
@@ -150,7 +159,7 @@ const LandingPage = () => {
             onClick={() => scrollToSection(techsRef)}
           >
             <Icon className="big" src={techs} alt="Techs" />
-            <ItemPrimaryTitle>Techs</ItemPrimaryTitle>
+            <ItemPrimaryTitle>{t.menuTechs}</ItemPrimaryTitle>
           </StyledContainer>
 
           <StyledContainer
@@ -158,7 +167,7 @@ const LandingPage = () => {
             onClick={() => scrollToSection(skillsRef)}
           >
             <Icon className="big" src={tech_skills} alt="Tech Skills" />
-            <ItemPrimaryTitle>Tech Skills</ItemPrimaryTitle>
+            <ItemPrimaryTitle>{t.menuSkills}</ItemPrimaryTitle>
           </StyledContainer>
 
           <StyledContainer
@@ -166,7 +175,7 @@ const LandingPage = () => {
             onClick={() => scrollToSection(frontendRef)}
           >
             <Icon className="big" src={frontend} alt="Frontend Projects" />
-            <ItemPrimaryTitle>Frontend Projects</ItemPrimaryTitle>
+            <ItemPrimaryTitle>{t.menuFrontend}</ItemPrimaryTitle>
           </StyledContainer>
 
           <StyledContainer
@@ -174,7 +183,7 @@ const LandingPage = () => {
             onClick={() => scrollToSection(backendRef)}
           >
             <Icon className="big" src={backend} alt="Backend Projects" />
-            <ItemPrimaryTitle>Backend Projects</ItemPrimaryTitle>
+            <ItemPrimaryTitle>{t.menuBackend}</ItemPrimaryTitle>
           </StyledContainer>
 
           <StyledContainer
@@ -184,7 +193,7 @@ const LandingPage = () => {
             }
           >
             <Icon className="big" src={linkedin} alt="My LinkedIn" />
-            <ItemPrimaryTitle>My LinkedIn</ItemPrimaryTitle>
+            <ItemPrimaryTitle>{t.menuLinkedin}</ItemPrimaryTitle>
           </StyledContainer>
 
           <StyledContainer
@@ -192,7 +201,7 @@ const LandingPage = () => {
             onClick={() => window.open("https://github.com/rafalves106")}
           >
             <Icon className="big" src={github} alt="My GitHub" />
-            <ItemPrimaryTitle>My GitHub</ItemPrimaryTitle>
+            <ItemPrimaryTitle>{t.menuGithub}</ItemPrimaryTitle>
           </StyledContainer>
         </MenuSection>
       </SectionContainer>
@@ -201,8 +210,8 @@ const LandingPage = () => {
       <div ref={aboutRef} style={{ width: "100%" }}>
         <SectionContainer>
           <SectionHeader>
-            <PagePrimaryTitle>About Me</PagePrimaryTitle>
-            <PageSecondaryTitle>Know more about myself</PageSecondaryTitle>
+            <PagePrimaryTitle>{t.aboutTitle}</PagePrimaryTitle>
+            <PageSecondaryTitle>{t.aboutSubtitle}</PageSecondaryTitle>
           </SectionHeader>
 
           <AboutSection>
@@ -211,37 +220,14 @@ const LandingPage = () => {
                 <img src={aboutMeImage} alt="about me" />
               </StyledContainer>
               <AboutTextContainer>
-                <PrimaryText>
-                  <span>R</span>afael, but you can call me Falves. I'm 22 years
-                  old and was born in Governador Valadares, building my life and
-                  career in Belo Horizonte, where I've lived since childhood. My
-                  passion for technology first emerged in my pre-teens, when I
-                  loved taking apart and reassembling electronics.
-                </PrimaryText>
-                <PrimaryText>
-                  This curiosity evolved into the challenge of optimizing and
-                  eventually building my own computers, which gave me a deep
-                  understanding of hardware.
-                </PrimaryText>
+                <PrimaryText>{t.aboutText1}</PrimaryText>
+                <PrimaryText>{t.aboutText2}</PrimaryText>
               </AboutTextContainer>
             </AboutImageAndTextContainer>
 
             <AboutTextContainer>
-              <PrimaryText>
-                This foundation led me to work for almost five years as a{" "}
-                <b>Web Designer and Graphic Designer</b> at D2F Comunicação.
-                There, I had the opportunity to develop my soft skills, learning
-                to work in a team and delegate tasks, especially after taking on
-                the role of supervisor.
-              </PrimaryText>
-              <PrimaryText>
-                Two years ago, I became firmly interested in the IT field and
-                set a new career goal. Today, I'm finishing a
-                <b>Full-Stack Java Developer</b> course and attending a
-                <b>Computer Science</b> college program in person, as I believe
-                it's the best way to improve my technical and interpersonal
-                skills.
-              </PrimaryText>
+              <PrimaryText>{t.aboutText3}</PrimaryText>
+              <PrimaryText>{t.aboutText4}</PrimaryText>
             </AboutTextContainer>
           </AboutSection>
         </SectionContainer>
@@ -250,8 +236,8 @@ const LandingPage = () => {
       <div ref={certificatesRef} style={{ width: "100%" }}>
         <SectionContainer>
           <SectionHeader>
-            <PagePrimaryTitle>Certificates</PagePrimaryTitle>
-            <PageSecondaryTitle>Certificados</PageSecondaryTitle>
+            <PagePrimaryTitle>{t.certificatesTitle}</PagePrimaryTitle>
+            <PageSecondaryTitle>{t.certificatesSubtitle}</PageSecondaryTitle>
           </SectionHeader>
 
           <CertificateSection>
@@ -276,8 +262,8 @@ const LandingPage = () => {
       <div ref={techsRef} style={{ width: "100%" }}>
         <SectionContainer>
           <SectionHeader>
-            <PagePrimaryTitle>Techs</PagePrimaryTitle>
-            <PageSecondaryTitle>Tecnologias</PageSecondaryTitle>
+            <PagePrimaryTitle>{t.techsTitle}</PagePrimaryTitle>
+            <PageSecondaryTitle>{t.techsSubtitle}</PageSecondaryTitle>
           </SectionHeader>
 
           <TechsSection>
@@ -352,8 +338,8 @@ const LandingPage = () => {
       <div ref={skillsRef} style={{ width: "100%" }}>
         <SectionContainer>
           <SectionHeader>
-            <PagePrimaryTitle>Tech Skills</PagePrimaryTitle>
-            <PageSecondaryTitle>Habilidades</PageSecondaryTitle>
+            <PagePrimaryTitle>{t.skillsTitle}</PagePrimaryTitle>
+            <PageSecondaryTitle>{t.skillsSubtitle}</PageSecondaryTitle>
           </SectionHeader>
 
           <SkillsContainer>
@@ -363,12 +349,12 @@ const LandingPage = () => {
                 onClick={() => setSectionActive("frontend")}
               >
                 <Folder src={folderIcon} />
-                <FolderTitle>Frontend</FolderTitle>
+                <FolderTitle>{t.folderFrontend}</FolderTitle>
               </FoldersContainer>
             ) : (
               <FoldersContainer onClick={() => setSectionActive("frontend")}>
                 <Folder src={folderIcon} />
-                <FolderTitle>Frontend</FolderTitle>
+                <FolderTitle>{t.folderFrontend}</FolderTitle>
               </FoldersContainer>
             )}
 
@@ -378,12 +364,12 @@ const LandingPage = () => {
                 onClick={() => setSectionActive("backend")}
               >
                 <Folder src={folderIcon} />
-                <FolderTitle>Backend</FolderTitle>
+                <FolderTitle>{t.folderBackend}</FolderTitle>
               </FoldersContainer>
             ) : (
               <FoldersContainer onClick={() => setSectionActive("backend")}>
                 <Folder src={folderIcon} />
-                <FolderTitle>Backend</FolderTitle>
+                <FolderTitle>{t.folderBackend}</FolderTitle>
               </FoldersContainer>
             )}
 
@@ -393,12 +379,12 @@ const LandingPage = () => {
                 onClick={() => setSectionActive("databases")}
               >
                 <Folder src={folderIcon} />
-                <FolderTitle>Database</FolderTitle>
+                <FolderTitle>{t.folderDatabase}</FolderTitle>
               </FoldersContainer>
             ) : (
               <FoldersContainer onClick={() => setSectionActive("databases")}>
                 <Folder src={folderIcon} />
-                <FolderTitle>Database</FolderTitle>
+                <FolderTitle>{t.folderDatabase}</FolderTitle>
               </FoldersContainer>
             )}
 
@@ -408,12 +394,12 @@ const LandingPage = () => {
                 onClick={() => setSectionActive("deploy")}
               >
                 <Folder src={folderIcon} />
-                <FolderTitle>Deploy</FolderTitle>
+                <FolderTitle>{t.folderDeploy}</FolderTitle>
               </FoldersContainer>
             ) : (
               <FoldersContainer onClick={() => setSectionActive("deploy")}>
                 <Folder src={folderIcon} />
-                <FolderTitle>Deploy</FolderTitle>
+                <FolderTitle>{t.folderDeploy}</FolderTitle>
               </FoldersContainer>
             )}
 
@@ -423,12 +409,12 @@ const LandingPage = () => {
                 onClick={() => setSectionActive("gdesign")}
               >
                 <Folder src={folderIcon} />
-                <FolderTitle>Graphic</FolderTitle>
+                <FolderTitle>{t.folderGraphic}</FolderTitle>
               </FoldersContainer>
             ) : (
               <FoldersContainer onClick={() => setSectionActive("gdesign")}>
                 <Folder src={folderIcon} />
-                <FolderTitle>Graphic</FolderTitle>
+                <FolderTitle>{t.folderGraphic}</FolderTitle>
               </FoldersContainer>
             )}
 
@@ -438,16 +424,17 @@ const LandingPage = () => {
                 onClick={() => setSectionActive("wdesign")}
               >
                 <Folder src={folderIcon} />
-                <FolderTitle>Web</FolderTitle>
+                <FolderTitle>{t.folderWeb}</FolderTitle>
               </FoldersContainer>
             ) : (
               <FoldersContainer onClick={() => setSectionActive("wdesign")}>
                 <Folder src={folderIcon} />
-                <FolderTitle>Web</FolderTitle>
+                <FolderTitle>{t.folderWeb}</FolderTitle>
               </FoldersContainer>
             )}
           </SkillsContainer>
 
+          {/* CONTEÚDO DENTRO DO NOVO CARD DE SKILLS */}
           {sectionActive === "frontend" && <Frontend />}
           {sectionActive === "backend" && <Backend />}
           {sectionActive === "databases" && <DataBases />}
@@ -460,8 +447,8 @@ const LandingPage = () => {
       <div ref={frontendRef} style={{ width: "100%" }}>
         <SectionContainer>
           <SectionHeader>
-            <PagePrimaryTitle>FrontEnd Projects</PagePrimaryTitle>
-            <PageSecondaryTitle>Things that I developed</PageSecondaryTitle>
+            <PagePrimaryTitle>{t.projectsFrontTitle}</PagePrimaryTitle>
+            <PageSecondaryTitle>{t.projectsSubtitle}</PageSecondaryTitle>
           </SectionHeader>
 
           <ProjectsSection>
@@ -469,7 +456,7 @@ const LandingPage = () => {
               <ProjectItem
                 title="Disney+ Clone"
                 thumbnail={disneyplusThumbnail}
-                description="I used Gulp to optimize the workflow, SCSS for a responsive layout, and JavaScript for the interface's interactivity."
+                description={t.descDisney}
                 techs={[
                   { logo: javascriptLogo, name: "JavaScript" },
                   { logo: htmlLogo, name: "HTML" },
@@ -483,7 +470,7 @@ const LandingPage = () => {
               <ProjectItem
                 title="Dashboard"
                 thumbnail={dashboardThumbnail}
-                description="This project is the user interface of the management dashboard I developed for my father business. It was built to consume the back-end API."
+                description={t.descDashboard}
                 techs={[
                   { logo: reactLogo, name: "React" },
                   { logo: typescriptLogo, name: "TypeScript" },
@@ -496,7 +483,7 @@ const LandingPage = () => {
               <ProjectItem
                 title="JQuery Form"
                 thumbnail={formJqueryThumbnail}
-                description="In this study project, I utilized jQuery plugins to implement robust form validation, ensuring data integrity and a smooth user experience."
+                description={t.descJquery}
                 techs={[
                   { logo: javascriptLogo, name: "JavaScript" },
                   { logo: htmlLogo, name: "HTML" },
@@ -510,7 +497,7 @@ const LandingPage = () => {
               <ProjectItem
                 title="To-Do VueJS"
                 thumbnail={todoVueThumbnail}
-                description="A simple to-do list application built with VueJS, allowing users to add, edit, and delete tasks with a user-friendly interface."
+                description={t.descTodo}
                 techs={[
                   { logo: javascriptLogo, name: "JavaScript" },
                   { logo: htmlLogo, name: "HTML" },
@@ -524,7 +511,7 @@ const LandingPage = () => {
               <ProjectItem
                 title="BootStrap Page"
                 thumbnail={coffeeShopThumbnail}
-                description="A visually appealing landing page for a coffee shop, designed to attract customers and showcase the shop's offerings with Bootstrap."
+                description={t.descCoffee}
                 techs={[
                   { logo: htmlLogo, name: "HTML" },
                   { logo: cssLogo, name: "CSS" },
@@ -541,8 +528,8 @@ const LandingPage = () => {
       <div ref={backendRef} style={{ width: "100%" }}>
         <SectionContainer>
           <SectionHeader>
-            <PagePrimaryTitle>BackEnd Projects</PagePrimaryTitle>
-            <PageSecondaryTitle>Things that I developed</PageSecondaryTitle>
+            <PagePrimaryTitle>{t.projectsBackTitle}</PagePrimaryTitle>
+            <PageSecondaryTitle>{t.projectsSubtitle}</PageSecondaryTitle>
           </SectionHeader>
 
           <ProjectsSection>
@@ -550,7 +537,7 @@ const LandingPage = () => {
               <ProjectItem
                 title="MicroServices"
                 thumbnail={microservicesThumbnail}
-                description="Microservices project in Java (Spring Boot), with MongoDB persistence, Docker Compose orchestration, and centralized management via Spring Cloud Config."
+                description={t.descMicroservices}
                 techs={[
                   { logo: javaLogo, name: "Java" },
                   { logo: mongoLogo, name: "MongoDB" },
@@ -562,7 +549,7 @@ const LandingPage = () => {
               <ProjectItem
                 title="Dashboard"
                 thumbnail={dashboardThumbnail}
-                description="This project is the user interface of the management dashboard I developed for my father business. It was built to consume the back-end API."
+                description={t.descDashboard}
                 techs={[
                   { logo: javaLogo, name: "Java" },
                   { logo: springLogo, name: "Spring Boot" },
@@ -574,7 +561,7 @@ const LandingPage = () => {
               <ProjectItem
                 title="Computer Solutions"
                 thumbnail={computationalThumbnail}
-                description="This project is a collection of academic works I developed on Computational Solutions Programming class during my first graduate semester."
+                description={t.descCompSolutions}
                 techs={[
                   { logo: javaLogo, name: "Java" },
                   { logo: pythonLogo, name: "Python" },
@@ -585,7 +572,7 @@ const LandingPage = () => {
               <ProjectItem
                 title="Software Modeling"
                 thumbnail={modellingThumbnail}
-                description="This project is a collection of academic works I developed on Software Modeling class during my first graduate semester."
+                description={t.descModeling}
                 techs={[
                   { logo: mysqlLogo, name: "MySQL" },
                   { logo: umlLogo, name: "UML" },
@@ -598,6 +585,15 @@ const LandingPage = () => {
         </SectionContainer>
       </div>
     </Container>
+  );
+};
+
+// 2. CRIAMOS ESTE NOVO WRAPPER PARA ENVOLVER TUDO COM O PROVIDER
+const LandingPage = () => {
+  return (
+    <LanguageProvider>
+      <LandingPageContent />
+    </LanguageProvider>
   );
 };
 
