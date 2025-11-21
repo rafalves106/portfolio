@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { ItemPrimaryTitle, PrimaryText } from "../components/Texts/styles";
 
 const GlassEffect = css`
@@ -27,10 +27,21 @@ const BaseSectionStyle = css`
   }
 `;
 
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 export const Container = styled.div`
   max-width: 1200px;
   width: 100%;
-  margin: 5rem auto;
+  margin: 5rem auto 0;
   padding: 0 1.5rem;
 
   display: flex;
@@ -57,6 +68,9 @@ export const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  animation: ${fadeInUp} 0.8s ease-out forwards;
+  opacity: 0;
 `;
 
 export const Icon = styled.img``;
@@ -458,6 +472,47 @@ export const ProjectsGrid = styled.div`
     &::-webkit-scrollbar {
       display: none;
     }
+  }
+`;
+
+export const FooterContainer = styled.footer`
+  width: 100%;
+  padding: 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid var(--color-border);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+
+  p {
+    margin: 0;
+  }
+
+  span {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+`;
+
+export const ScrollToTopButton = styled.button`
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
   }
 `;
 

@@ -26,12 +26,14 @@ import {
   Folder,
   FoldersContainer,
   FolderTitle,
+  FooterContainer,
   Icon,
   LanguageSwitchButton,
   LogosContainer,
   MenuSection,
   ProjectsGrid,
   ProjectsSection,
+  ScrollToTopButton,
   SectionContainer,
   SectionHeader,
   SkillsContainer,
@@ -122,6 +124,10 @@ const LandingPageContent = () => {
         behavior: "smooth",
       });
     }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -584,6 +590,20 @@ const LandingPageContent = () => {
           </ProjectsSection>
         </SectionContainer>
       </div>
+
+      <FooterContainer>
+        <p>
+          Designed & Developed by <span>Rafael "Falves"</span>
+        </p>
+        <p>
+          © {new Date().getFullYear()} • Built with React, TypeScript & Styled
+          Components
+        </p>
+
+        <ScrollToTopButton onClick={scrollToTop}>
+          {language === "en" ? "Back to top ↑" : "Voltar ao topo ↑"}
+        </ScrollToTopButton>
+      </FooterContainer>
     </Container>
   );
 };
