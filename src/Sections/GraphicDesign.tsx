@@ -2,8 +2,11 @@ import { SkillSection } from "../components/Skills/SkillSection";
 import corelLogo from "../assets/logos/coreldraw.png";
 import photoshopLogo from "../assets/logos/photoshop.png";
 import illustratorLogo from "../assets/logos/illustrator.png";
+import { useLanguage } from "../context/LanguageContext";
 
 export function GraphicDesign() {
+  const { t } = useLanguage();
+
   return (
     <SkillSection
       sectionTitle="Graphic Design"
@@ -11,23 +14,20 @@ export function GraphicDesign() {
         {
           title: "CorelDRAW",
           logo: corelLogo,
-          ranking: "Advanced",
-          description:
-            "As part of my almost 5 years of experience in design, I have a solid command of CorelDRAW. I used the tool for the creation of visual identities and printed materials, which gave me a strong understanding of design principles, something I apply today in developing interfaces with a focus on aesthetics and usability.",
+          ranking: t.rankIntermediate,
+          description: t.descCorel,
         },
         {
           title: "Photoshop",
           logo: photoshopLogo,
-          ranking: "Intermediate",
-          description:
-            "My command of Adobe Photoshop is focused on creating realistic mockups, a skill I developed throughout my design experience. While the software was also used for other digital arts, my primary goal was to bring life to visual identity projects, presenting the concept in a professional and impactful way.",
+          ranking: t.rankBeginner,
+          description: t.descPhotoshop,
         },
         {
           title: "Illustrator",
           logo: illustratorLogo,
-          ranking: "Intermediate",
-          description:
-            "Even though it wasn't my main software, I am proficient in Adobe Illustrator and used it frequently during my experience as a designer.",
+          ranking: t.rankBeginner,
+          description: t.descIllustrator,
         },
       ]}
     />

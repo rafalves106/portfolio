@@ -12,6 +12,7 @@ import {
   SkillTechContent,
 } from "./styles";
 import { SkillsSection } from "../../landingPage/styles";
+import { useLanguage } from "../../context/LanguageContext";
 
 interface SkillItem {
   title: string;
@@ -28,10 +29,14 @@ type Props = {
 
 const renderStars = (rank: string) => {
   const rankMap: { [key: string]: number } = {
-    Advanced: 4,
-    Intermediate: 3,
-    Beginner: 2,
-    Basic: 1,
+    Advanced: 5,
+    Avançado: 5,
+    Intermediate: 4,
+    Intermediário: 4,
+    Beginner: 3,
+    Iniciante: 3,
+    Basic: 2,
+    Básico: 2,
   };
   const filledStars = rankMap[rank] || 0;
   const stars = [];
@@ -56,6 +61,7 @@ const renderStars = (rank: string) => {
 };
 
 export function SkillSection(props: Props) {
+  const { language } = useLanguage();
   const renderizaSkills = () => {
     if (props.skills && props.skills.length > 0) {
       return (
@@ -76,6 +82,11 @@ export function SkillSection(props: Props) {
 
                   {skill.repos && skill.repos.length > 0 && (
                     <SkillRepositories>
+                      <span>
+                        {language === "en"
+                          ? "Top Repositories:"
+                          : "Principais Repositórios:"}
+                      </span>
                       {skill.repos?.slice(0, 3).map((repo, i) => (
                         <a
                           key={i}

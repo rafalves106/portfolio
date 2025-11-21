@@ -388,6 +388,7 @@ export const FolderTitle = styled.span`
   color: var(--color-text);
   text-align: center;
   font-size: 0.8rem;
+  width: 90%;
   z-index: 10;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 `;

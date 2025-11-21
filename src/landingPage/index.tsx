@@ -593,11 +593,13 @@ const LandingPageContent = () => {
 
       <FooterContainer>
         <p>
-          Designed & Developed by <span>Rafael "Falves"</span>
+          {language === "en" ? "Designed & Developed by" : "Desenvolvido por"}{" "}
+          <span>Rafael "Falves" Alves</span>
         </p>
         <p>
-          © {new Date().getFullYear()} • Built with React, TypeScript & Styled
-          Components
+          {language === "en"
+            ? `© ${new Date().getFullYear()} • Built with React, TypeScript & Styled Components`
+            : `© ${new Date().getFullYear()} • Desenvolvido com React, TypeScript & Styled Components`}
         </p>
 
         <ScrollToTopButton onClick={scrollToTop}>
