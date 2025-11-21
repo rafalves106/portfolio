@@ -2,14 +2,14 @@ import { SkillSection } from "../components/Skills/SkillSection";
 import javaLogo from "../assets/logos/java.png";
 import springLogo from "../assets/logos/springboot.png";
 import pythonLogo from "../assets/logos/python.png";
-import { useLanguage } from "../context/LanguageContext"; // Importe o hook
+import { useLanguage } from "../context/LanguageContext";
 
 export function Backend() {
-  const { t } = useLanguage(); // Use o hook
+  const { t } = useLanguage();
 
   return (
     <SkillSection
-      sectionTitle="Backend" // Este título pode ser traduzido se desejar, ex: t.folderBackend
+      sectionTitle="Backend"
       skills={[
         {
           title: "Java",
