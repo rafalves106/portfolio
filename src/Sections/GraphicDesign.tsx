@@ -3,17 +3,9 @@ import corelLogo from "../assets/logos/coreldraw.png";
 import photoshopLogo from "../assets/logos/photoshop.png";
 import illustratorLogo from "../assets/logos/illustrator.png";
 
-type Props = {
-  secaoAtiva: string;
-  handleMudarSecao: (secao: string) => void;
-};
-
-export function GraphicDesign(props: Props) {
+export function GraphicDesign() {
   return (
     <SkillSection
-      mySecaoId="gdesign"
-      secaoAtiva={props.secaoAtiva}
-      handleMudarSecao={props.handleMudarSecao}
       sectionTitle="Graphic Design"
       skills={[
         {

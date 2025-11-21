@@ -11,7 +11,7 @@ import {
   SkillTech,
   SkillTechContent,
 } from "./styles";
-import { SkillsSection } from "../../pages/LandingPage/styles";
+import { SkillsSection } from "../../landingPage/styles";
 
 interface SkillItem {
   title: string;
@@ -24,9 +24,6 @@ interface SkillItem {
 type Props = {
   sectionTitle?: string;
   skills?: SkillItem[];
-  secaoAtiva: string;
-  mySecaoId: string;
-  handleMudarSecao: (secao: string) => void;
 };
 
 const renderStars = (rank: string) => {
@@ -59,9 +56,6 @@ const renderStars = (rank: string) => {
 };
 
 export function SkillSection(props: Props) {
-  const isVisible = props.secaoAtiva === props.mySecaoId;
-  const visibilityClass = isVisible ? "" : "hidden";
-
   const renderizaSkills = () => {
     if (props.skills && props.skills.length > 0) {
       return (
@@ -108,7 +102,7 @@ export function SkillSection(props: Props) {
   };
 
   return (
-    <div className={visibilityClass}>
+    <div>
       <SkillsSection> {renderizaSkills()}</SkillsSection>
     </div>
   );

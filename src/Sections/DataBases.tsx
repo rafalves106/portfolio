@@ -3,17 +3,9 @@ import postgresLogo from "../assets/logos/postgresql.png";
 import mysqlLogo from "../assets/logos/mysql.png";
 import mongoLogo from "../assets/logos/mongo.png";
 
-type Props = {
-  secaoAtiva: string;
-  handleMudarSecao: (secao: string) => void;
-};
-
-export function DataBases(props: Props) {
+export function DataBases() {
   return (
     <SkillSection
-      mySecaoId="databases"
-      secaoAtiva={props.secaoAtiva}
-      handleMudarSecao={props.handleMudarSecao}
       sectionTitle="Databases"
       skills={[
         {

@@ -3,17 +3,9 @@ import wordpressLogo from "../assets/logos/wordpress.png";
 import elementorLogo from "../assets/logos/elementor.png";
 import canvaLogo from "../assets/logos/canva.png";
 
-type Props = {
-  secaoAtiva: string;
-  handleMudarSecao: (secao: string) => void;
-};
-
-export function WebDesign(props: Props) {
+export function WebDesign() {
   return (
     <SkillSection
-      mySecaoId="wdesign"
-      secaoAtiva={props.secaoAtiva}
-      handleMudarSecao={props.handleMudarSecao}
       sectionTitle="Web Design"
       skills={[
         {

@@ -3,17 +3,9 @@ import javaLogo from "../assets/logos/java.png";
 import springLogo from "../assets/logos/springboot.png";
 import pythonLogo from "../assets/logos/python.png";
 
-type Props = {
-  secaoAtiva: string;
-  handleMudarSecao: (secao: string) => void;
-};
-
-export function Backend(props: Props) {
+export function Backend() {
   return (
     <SkillSection
-      mySecaoId="backend"
-      secaoAtiva={props.secaoAtiva}
-      handleMudarSecao={props.handleMudarSecao}
       sectionTitle="Backend"
       skills={[
         {

@@ -3,17 +3,9 @@ import vercelLogo from "../assets/logos/vercel.png";
 import renderLogo from "../assets/logos/render.png";
 import neonLogo from "../assets/logos/neon.png";
 
-type Props = {
-  secaoAtiva: string;
-  handleMudarSecao: (secao: string) => void;
-};
-
-export function Deploy(props: Props) {
+export function Deploy() {
   return (
     <SkillSection
-      mySecaoId="deploy"
-      secaoAtiva={props.secaoAtiva}
-      handleMudarSecao={props.handleMudarSecao}
       sectionTitle="Deploy"
       skills={[
         {

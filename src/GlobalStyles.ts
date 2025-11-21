@@ -27,6 +27,14 @@ const GlobalStyles = createGlobalStyle`
         color: var(--color-text);
         background: var(--color-bg);
         min-height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    img, picture, video, canvas, svg {
+        display: block;
+        max-width: 100%;
+        height: auto;
     }
 
     a {
@@ -46,6 +54,19 @@ const GlobalStyles = createGlobalStyle`
         background: none;
         border: none;
         outline: none;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--color-bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--color-border);
+        border-radius: 4px;
     }
 
 

@@ -5,17 +5,9 @@ import cssLogo from "../assets/logos/css.png";
 import javascriptLogo from "../assets/logos/javascript.png";
 import htmlLogo from "../assets/logos/html.png";
 
-type Props = {
-  secaoAtiva: string;
-  handleMudarSecao: (secao: string) => void;
-};
-
-export function Frontend(props: Props) {
+export function Frontend() {
   return (
     <SkillSection
-      mySecaoId="frontend"
-      secaoAtiva={props.secaoAtiva}
-      handleMudarSecao={props.handleMudarSecao}
       sectionTitle="Frontend"
       skills={[
         {

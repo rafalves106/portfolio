@@ -1,12 +1,12 @@
 import { ItemPrimaryTitle, SecondaryText } from "../Texts/styles";
 import {
-  ProjectDetailsContainer,
-  ProjectDetailsTechsContainer,
-  ProjectDetailsTitleAndTechsContainer,
   ProjectItemContainer,
+  ProjectHeader,
+  ProjectTechs,
   ProjectThumbnailContainer,
   ProjectThumbnailCover,
   ProjectThumbnailLinks,
+  ProjectDescriptionContainer,
 } from "./styles";
 import githubLogo from "../../assets/logos/github.png";
 import vercelLogo from "../../assets/logos/vercel.png";
@@ -23,8 +23,23 @@ type Props = {
 const ProjectItem = (props: Props) => {
   return (
     <ProjectItemContainer>
+      <ProjectHeader>
+        <ItemPrimaryTitle>{props.title}</ItemPrimaryTitle>
+        <ProjectTechs>
+          {props.techs.map((tech) => (
+            <img
+              key={tech.name}
+              src={tech.logo}
+              alt={tech.name}
+              title={tech.name}
+            />
+          ))}
+        </ProjectTechs>
+      </ProjectHeader>
+
       <ProjectThumbnailContainer>
         <ProjectThumbnailCover src={props.thumbnail} alt={props.title} />
+
         <ProjectThumbnailLinks>
           {props.githubLink && props.vercelLink ? (
             <>
@@ -58,17 +73,10 @@ const ProjectItem = (props: Props) => {
           ) : null}
         </ProjectThumbnailLinks>
       </ProjectThumbnailContainer>
-      <ProjectDetailsContainer>
-        <ProjectDetailsTitleAndTechsContainer>
-          <ItemPrimaryTitle>{props.title}</ItemPrimaryTitle>
-          <ProjectDetailsTechsContainer>
-            {props.techs.map((tech) => (
-              <img key={tech.name} src={tech.logo} alt={tech.name} />
-            ))}
-          </ProjectDetailsTechsContainer>
-        </ProjectDetailsTitleAndTechsContainer>
+
+      <ProjectDescriptionContainer>
         <SecondaryText>{props.description}</SecondaryText>
-      </ProjectDetailsContainer>
+      </ProjectDescriptionContainer>
     </ProjectItemContainer>
   );
 };
